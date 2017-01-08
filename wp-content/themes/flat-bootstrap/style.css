@@ -295,6 +295,13 @@ div.navbar-collapse.collapse {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+div#content {
+    /*background-color: #ebebeb;*/
+}
+
+div#main-grid {
+    background-color: #fff;
+}
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
@@ -303,6 +310,10 @@ div.navbar-collapse.collapse {
 
     padding-left: 0.8em;
     }
+    
+.navbar-nav>li {
+    padding-top: 0.3em;
+}
 
 }
 /*--------------------------------------------------------------
@@ -316,11 +327,16 @@ div.navbar-collapse.collapse {
 }
 
 .navbar.navbar-default.navbar-static-top {
-    background-color: #f0f8ff;
+    background-color: #c0c0c0;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #555555;
+    font-weight: 400;
 }
 
 .custom-logo {
-    display: block; width: 220px; 
+    display: block; width: 270px; 
 }
 .content-header h1, 
 .content-header h2, 
