@@ -16,9 +16,9 @@
 		<?php endif; // !is_single... ?>
 
 		<?php if ( is_single() OR is_home() ) : ?>
-
+                        <?php $author = get_the_author() . ("&nbsp | &nbsp"); ?>
 			<?php $the_date = get_the_date(); ?>
-			<p><span class="posted-on"><span class="glyphicon glyphicon-calendar"></span>&nbsp;
+			<p><span class="posted-on"><?php echo $author ?><span class="glyphicon glyphicon-calendar"></span>&nbsp;
 			<?php echo $the_date; ?> 
 			</span>
 	
@@ -36,7 +36,7 @@
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 			 &nbsp;|&nbsp;<span class="comments-link">
 			 <span class="glyphicon glyphicon-comment"></span>&nbsp;
-			 <?php comments_popup_link( __( 'Leave a comment', 'flat-bootstrap' ), __( '1 Comment</span>', 'flat-bootstrap' ), __( '% Comments', 'flat-bootstrap' ), 'smoothscroll' ); ?>
+			 <?php comments_popup_link( __( '0', 'flat-bootstrap' ), __( '1</span>', 'flat-bootstrap' ), __( '%', 'flat-bootstrap' ), 'smoothscroll' ); ?>
 			 </span>
 		<?php endif; // ! post_password... ?>
 

@@ -283,7 +283,7 @@ div.navbar-collapse.collapse {
 }
 
 .notfirst .post .entry-header .entry-meta h1.entry-title {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 
@@ -319,7 +319,10 @@ div#main-grid {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-
+.home .site .site-header .main-navigation  .navbar-default {
+    /*background-color: #f8f8f8;*/
+    border-color: #999;
+}
 /* Set content (page title) header to midnight blue */
 .content-header {
 	background-color: #34495e;
@@ -390,6 +393,9 @@ div#main-grid {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* suppress paragraph from notfirst post in Home page */
+.notfirst .post .entry-summary p {
+    display: none;
 
 /* Reduce the size of post entry meta (date, author) */
 .entry-meta {
