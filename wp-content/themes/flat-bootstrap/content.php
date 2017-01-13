@@ -29,6 +29,10 @@
 		<?php endif; ?>
 
 		<div class="entry-summary">
+                    <div id="home-subtitle">
+                        <?php echo($subtitle = get_post_meta( get_the_ID(), '_subtitle', $single = true ) );  ?>
+                        
+                    </div>
 		<?php the_excerpt(); ?>
 		<hr>
 		</div><!-- .entry-summary -->

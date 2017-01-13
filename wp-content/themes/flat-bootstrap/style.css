@@ -305,6 +305,12 @@ div#main-grid {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1280px;
+    }
+}
+
 @media screen and  (min-width: 768px) {
 .container>.navbar-header, .container-fluid>.navbar-header, .container>.navbar-collapse, .container-fluid>.navbar-collapse {
 
@@ -316,6 +322,7 @@ div#main-grid {
 }
 
 }
+
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -393,6 +400,11 @@ div#main-grid {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* suppress subtitle from first post on Home page as it displays the excerpt */
+.first .post .entry-summary #home-subtitle {
+    display: none;
+}
+
 /* suppress paragraph from notfirst post in Home page */
 .notfirst .post .entry-summary p {
     display: none;
