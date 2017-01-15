@@ -15,14 +15,14 @@ global $xsbf_theme_options;
 	
 /* If home page "sidebar" has widgets, then display them */
 if ( is_front_page() and !is_paged() ) {
-$sidebar_home = get_dynamic_sidebar( 'sidebar-5' );
-$sidebar_home = apply_filters( 'xsbf_home', $sidebar_home );
-if ( $sidebar_home ) :
+$sidebar_hotel = get_dynamic_sidebar( 'sidebar-6' );
+$sidebar_hotel = apply_filters( 'xsbf_home', $sidebar_hotel );
+if ( $sidebar_hotel ) :
 ?>
-	<div id="sidebar-home" class="sidebar-home">
+	<div id="sidebar-hotel" class="sidebar-hotel">
 		<?php //echo apply_filters( 'xsbf_home', $sidebar_home ); ?>
-		<?php echo $sidebar_home; ?>
-	</div><!-- .sidebar-home -->
+		<?php echo $sidebar_hotel; ?>
+	</div><!-- .sidebar-hotel -->
 
 <?php
 /* Otherwise, show an example if we are on the front page and its set to display the blog */

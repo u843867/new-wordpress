@@ -303,6 +303,9 @@ endif; // end ! function_exists
 /* 
  * LOAD JAVASCRIPT 
  */
+
+
+
 if ( ! function_exists('xsbf_load_js') ) :
 add_action( 'wp_enqueue_scripts', 'xsbf_load_js' );
 function xsbf_load_js() {
@@ -337,11 +340,128 @@ function xsbf_load_js() {
 		wp_enqueue_script( 'html5shiv', get_template_directory_uri() . '/html5/html5shiv.min.js', null, '3.7.3', true );
 		wp_enqueue_script( 'respond', get_template_directory_uri() . '/html5/respond.min.js', null, '1.4.2', true );
 	}
+        
+        
 
 } // end function xsbf_load_js
 endif; // end ! function_exists xsbf_load_js
 
 endif; // end ! function_exists xsbf_scripts
+
+function my_theme_add_scripts() {
+    if (get_post_type() == 'hotel')  { 
+       wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAxGshykT3IeIaie-tTjRXrQqyLuKoKtoU', array(), '3', true );
+       wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+   }
+}
+ 
+add_action( 'wp_enqueue_scripts', 'my_theme_add_scripts' );
+ 
+function my_acf_google_map_api( $api ){
+ 
+ $api['key'] = 'AIzaSyAxGshykT3IeIaie-tTjRXrQqyLuKoKtoU';
+ 
+ return $api;
+ 
+}
+ 
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+
+//add_action( 'init', 'my_hotels' );
+//add_filter( 'post_updated_messages', 'my_hotels_messages' );
+//add_action( 'admin_head', 'my_hotels_help' );
+//
+//function my_hotels() {
+//	$labels = array(
+//		'name'               => 'Hotels',
+//		'singular_name'      => 'Hotel',
+//		'menu_name'          => 'Hotels',
+//		'name_admin_bar'     => 'Hotel',
+//		'add_new'            => 'Add New',
+//		'add_new_item'       => 'Add New Hotel',
+//		'new_item'           => 'New Hotel',
+//		'edit_item'          => 'Edit Hotel',
+//		'view_item'          => 'View Hotel',
+//		'all_items'          => 'All Hotels',
+//		'search_items'       => 'Search Hotels',
+//		'parent_item_colon'  => 'Parent Hotels:',
+//		'not_found'          => 'No hotels found.',
+//		'not_found_in_trash' => 'No hotels found in Trash.'
+//	);
+//
+//	$args = array( 
+//		'labels'		=> $labels,
+//		'public'		=> true,
+//		'rewrite'		=> array( 'slug' => 'hotel' ),
+//		'has_archive'   => true,
+//		'menu_position' => 20,
+//		'menu_icon'     => 'dashicons-store',
+//		'taxonomies'		=> array( 'post_tag', 'category' ),
+//		'supports'      => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields', 'comments' )
+//	);
+//	register_post_type( 'my_hotel', $args );
+//}
+//
+//function my_hotels_messages( $messages ) {
+//	$post = get_post();
+//
+//	$messages['hotel'] = array(
+//		0  => '',
+//		1  => 'Hotel updated.',
+//		2  => 'Custom field updated.',
+//		3  => 'Custom field deleted.',
+//		4  => 'Hotel updated.',
+//		5  => isset( $_GET['revision'] ) ? sprintf( 'Hotel restored to revision from %s',wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+//		6  => 'Hotel published.',
+//		7  => 'Hotel saved.',
+//		8  => 'Hotel submitted.',
+//		9  => sprintf(
+//			'Hotel scheduled for: <strong>%1$s</strong>.',
+//			date_i18n( 'M j, Y @ G:i', strtotime( $post->post_date ) )
+//		),
+//		10 => 'Hotel draft updated.'
+//	);
+//
+//	return $messages;
+//}
+//
+//function my_hotels_help() {
+//
+//	$screen = get_current_screen();
+//
+//	if ( 'hotel' != $screen->post_type ) {
+//		return;
+//	}
+//
+//	$basics = array(
+//		'id'      => 'hotel_basics',
+//		'title'   => 'Hotel Basics',
+//		'content' => 'Content for help tab here'
+//	);
+//
+//	$formatting = array(
+//		'id'      => 'hotel_formatting',
+//		'title'   => 'Hotel Formatting',
+//		'content' => 'Content for help tab here'
+//	);
+//
+//	$screen->add_help_tab( $basics );
+//	$screen->add_help_tab( $formatting );
+//
+//}
+
+function wpb_change_title_text( $title ){
+     $screen = get_current_screen();
+  
+     if  ( 'hotel' == $screen->post_type ) {
+          $title = 'Enter Hotel name';
+     }
+  
+     return $title;
+}
+
+
 
 /**
  * LOAD OUR INCLUDE FILES FOR VARIOUS THEME FEATURES
@@ -377,3 +497,5 @@ foreach ( $includes as $include ) {
 } // end function
 xsbf_load_includes();
 endif; // end ! function_exists
+
+
