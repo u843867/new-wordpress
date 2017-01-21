@@ -74,8 +74,14 @@ h1,
 h2, 
 h3 {
     font-weight: 300; /*BS is 500 for h1-h6, including .h1-.h6*/
-}
+}   
 
+i.fa.fa-star, i.fa.fa-star-half-o {
+    color: #ebca16;
+    font-size: 1.5em;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
+}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -297,11 +303,13 @@ div.navbar-collapse.collapse {
 --------------------------------------------------------------*/
 div#content {
     /*background-color: #ebebeb;*/
+    background-color: #f5f8fa;
+}
+#main-grid {
+    background-color: #f5f8fa;
 }
 
-div#main-grid {
-    background-color: #fff;
-}
+
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/

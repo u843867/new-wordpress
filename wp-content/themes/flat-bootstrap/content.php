@@ -9,7 +9,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('rm');  ?>  >
 
 	<?php get_template_part( 'content', 'post-header' ); ?>
 
@@ -34,7 +34,7 @@
                         
                     </div>
 		<?php the_excerpt(); ?>
-		<hr>
+		
 		</div><!-- .entry-summary -->
 
 	<?php 

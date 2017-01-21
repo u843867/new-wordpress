@@ -185,6 +185,7 @@ function xsbf_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
+                'class' => 'rm',
 	) );
 
 	// Put footer next as most themes put them here. Default # columns is 3.

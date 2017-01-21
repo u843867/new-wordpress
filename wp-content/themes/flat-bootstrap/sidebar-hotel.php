@@ -11,15 +11,9 @@
  */
 ?>
 	<div id="secondary" class="widget-area col-md-4" role="complementary">
-            <aside id="search" class="widget widget_address">
-                <address>
-                    <p><?php echo( get_field( "hotel_street_address" )); ?></p>
-                    <p><?php echo( get_field( "town/city" )); ?></p>
-                    <p><?php echo( get_field( "state/county/region" )); ?></p>
-                    <p><?php echo( get_field( "post/zip_code" )); ?></p>
-                    <p><?php echo( get_field( "country" )); ?></p>
-                    <hr>
-                </address>
+            <aside id="search" class="widget widget_address rm">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                
                 
                 <?php 
                     $location = get_field('location');
@@ -29,6 +23,7 @@
                     <div class="acf-map">
                             <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
                     </div>
+                    
                 <?php endif; ?>
                 
             </aside>

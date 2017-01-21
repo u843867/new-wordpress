@@ -426,6 +426,17 @@ header.content-header {
 	margin-bottom: 10px; /* Heading will add 25px */
 }
 
+.rm {
+    position: relative;
+    display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 1em; 
+}
+
+
 /* Get rid of bullets on sidebars, footer, page top, page bottom, and home page */
 #secondary ul, 
 #sidebar-pagetop ul,
@@ -555,6 +566,12 @@ footer#colophon.site-footer ul li {
 
 article.post {
 	margin-bottom: 25px;
+/*        display: block;
+    margin-bottom: 0.75rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding: 1em;*/
 }
 
 /* When full-width pages are changed back to have a sidebar, fix the layout */
@@ -756,6 +773,12 @@ img, embed, iframe, media, swf, pre, code, container, select, .videopress-placeh
 img, 
 .videopress-placeholder {
 	height: auto;
+}
+
+h1.header-image-title {
+    background-color: rgba(192, 192, 192, 0.78);
+    display: inline-block;
+    opacity: 1;
 }
 
 /*--------------------------------------------------------------
