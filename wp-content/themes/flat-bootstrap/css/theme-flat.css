@@ -926,6 +926,22 @@ button.btn.btn-hollow:hover,
 }
 
 /* 
+ * edit Bootstrap progress bar margins etc
+ * 
+ */
+.progress {
+        margin: 0.2em -1em 0.9em 0em;
+}
+
+.progress-bar-info {
+    background-color: #1abc9c;
+}
+
+.widget .panel-body {
+     padding: 0.5em 1em 0.5em 0em;
+}
+
+/* 
  * Enhance Bootstrap to allow for columns with no gutter (margin) 
  * TO-DO: Bootstrap 4 handles this stuff already, so consider removing at that time
  */

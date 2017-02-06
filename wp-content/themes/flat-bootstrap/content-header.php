@@ -22,6 +22,8 @@
 	 $custom_header_location = isset ( $xsbf_theme_options['custom_header_location'] ) ? $xsbf_theme_options['custom_header_location'] : 'content-header';
 	 $image_url = $image_width = $image_type = null;
 	 $title = $subtitle = $description = null;
+         $star = ( get_field("star_rating"));
+         
 	 
 	/**
 	 * CHECK FOR A WIDE FEATURED IMAGE OR AN UPLOADED CUSTOM HEADER IMAGE
@@ -168,9 +170,30 @@
 		<header class="content-header-image">
 			<div class="<?php echo $image_class; ?>" style="background-image: url('<?php echo $image_url; ?>')">
 				<div class="<?php echo $overlay_class; ?>">
-				<h1 class="header-image-title"><?php echo $title; ?></h1>
+				<h1 class="header-image-title"><?php echo $title; ?>
+                                
+                                   <?php if ( $star ) {
+                                    
+                                    echo ('<div class = "star_display">');
+                                        
+                                        $star = ( get_field("star_rating"));
+
+                                        for ($i = $star; $i > 0; $i--) {
+
+                                            echo ("<i class='fa fa-star' aria-hidden='true'></i>");
+                                        }
+                                } ?>
+                                
+                                
+                                </h1>
 				<?php if ( $subtitle ) echo '<h2 class="header-image-caption">' . $subtitle . '</h2>'; ?>
 				<?php if ( $description ) echo '<p class="header-image-description">' . $description . '</p>'; ?> 
+                             
+                            </div>
+                            
+                                }
+                                    
+                                    ?> 
 
 				<?php				
 				// Only for static home page, show a scroll down icon

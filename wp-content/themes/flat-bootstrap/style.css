@@ -4,7 +4,7 @@ Theme URI: http://xtremelysocial.com/wordpress/flat/
 Author: XtremelySocial
 Author URI: http://xtremelysocial.com
 Description: Flat Bootstrap by XtremelySocial is a modern, fully responsive, "flat" style theme with a nice color palette, big full-width images, and full-width colored sections. It automatically adapts for desktops, tablets, and phones. It is based on the WordPress standard starter theme (_S) and the Twitter Bootstrap CSS framework. Features include a mobile navigation bar, multiple columns (grid), buttons, icons, labels, badges, tabbed content areas, collapsible content areas, progress bars, alert boxes, carousels (sliders) and much, much more. This is a theme for both users and theme developers with lots of features but without the bloat. For a live demo go to http://xtremelysocial.com/wordpress/flat/. PLEASE NOTE: Version 1.9 has had a major "spring cleaning" of the functions, templates, and CSS. Please be sure to test it out on your site.
-Version: 1.9
+Version: 2.0
 License: GNU General Public License
 License URI: http://www.opensource.org/licenses/GPL-3.0
 Text Domain: flat-bootstrap
@@ -82,6 +82,15 @@ i.fa.fa-star, i.fa.fa-star-half-o {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
 }
+
+.star_display {
+    font-size: 16px;
+}
+
+i.fa.fa-map-marker {
+    padding-right: 0.4em;
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -128,6 +137,35 @@ blockquote footer {
 	color: #19b798;
 }
 
+.panel-body {
+/*    padding-top: 0;
+    padding-bottom: 0;*/
+   
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+/*.progress {
+    padding-top: 0;
+    padding-bottom: 0;
+   
+    margin: 0 1em 0 1em;
+}*/
+
+.panel {
+     margin-left: -0.97em;
+    margin-right: -0.97em;
+    margin-bottom: 0.2em;
+    margin-top: -0.55em
+}
+
+address ul {
+    margin-bottom: 0;
+}
+
+tr.review-score {
+    font-weight: 500;
+    color: #16a085;
+}
 /*--------------------------------------------------------------
 # Forms and Buttons
 --------------------------------------------------------------*/
@@ -406,6 +444,26 @@ div#content {
 }
 
 /*--------------------------------------------------------------
+## Hotel post type 
+--------------------------------------------------------------*/
+address {
+    margin-bottom: 0px;
+}
+
+address ul  {
+    padding-left: 0;
+}
+
+address ul li {
+    list-style-type: none;
+    list-style-type: none;
+    display: inline;
+    font-size: 14px;
+    font-size: 1.6rem;
+}
+
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 /* suppress subtitle from first post on Home page as it displays the excerpt */
@@ -427,6 +485,7 @@ div#content {
 	background-color: #1abc9c;
 	color: #fff;
 }
+
 
 /*--------------------------------------------------------------
 ## Comments
@@ -482,6 +541,7 @@ div#content {
 	/*margin-left: 1.625em !important;*/
 }
 
+
 /*--------------------------------------------------------------
 ## Plugins
 --------------------------------------------------------------*/
@@ -513,4 +573,6 @@ form.contact-form input[type='email']:focus,
 form.contact-form textarea:focus {
     color: #555;
 }
+
+
 

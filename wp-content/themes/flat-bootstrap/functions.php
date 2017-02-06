@@ -297,6 +297,7 @@ function xsbf_load_css() {
 	// This theme's stylesheet, which contains the theme-specific CSS for coloring
 	// content header, footer, etc.
 	wp_enqueue_style( 'flat-bootstrap', get_stylesheet_uri() );
+        
 
 } // end function xsbf_load_css
 endif; // end ! function_exists
