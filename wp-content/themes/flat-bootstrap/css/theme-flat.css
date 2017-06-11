@@ -59,6 +59,12 @@ i.icon-xlg {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/*//hide the title .hide me class*/
+.hide_me {
+    display: none;
+}
+        
+
 
 /*--------------------------------------------------------------
 ## Colors
@@ -942,6 +948,19 @@ button.btn.btn-hollow:hover,
 }
 
 /* 
+ * edit Bootstrap panel group etc
+ * 
+ */
+div#accordion {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.panel-group .panel+.panel {
+    margin-top: 12px;
+}
+
+/* 
  * Enhance Bootstrap to allow for columns with no gutter (margin) 
  * TO-DO: Bootstrap 4 handles this stuff already, so consider removing at that time
  */
@@ -954,5 +973,21 @@ button.btn.btn-hollow:hover,
 .row.no-gutters > [class*=" col-"] {
   padding-right: 0;
   padding-left: 0;
+}
+
+/*
+adding this to remove the gap that appears when the view is reduced in
+width.  For some reason it is not working when I add to style.css??*/
+.carousel-inner {
+    display: block;
+}
+
+ .carousel-indicators .active{
+        background-color: #1abc9c;
+    }
+    
+.carousel-indicators li{
+        border: 1px solid #1abc9c;
+        background-color: #ccc;
 }
 

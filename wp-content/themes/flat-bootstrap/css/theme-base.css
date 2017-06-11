@@ -403,6 +403,10 @@ header.content-header {
 	.section-image, .section-image-overlay {
 		min-height: 400px;
 	}
+        
+        .container {
+            width: 758px;
+        }
 }
 
 /*--------------------------------------------------------------
@@ -779,6 +783,7 @@ h1.header-image-title {
     background-color: rgba(192, 192, 192, 0.78);
     display: inline-block;
     opacity: 1;
+    font-weight: 400;
 }
 
 /*--------------------------------------------------------------

@@ -276,6 +276,7 @@ function xsbf_load_css() {
 	global $xsbf_theme_options;
 
 	// Load our custom version of Bootsrap CSS. Can easily override in a child theme.
+        
 	wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css', array(), '3.3.6', 'all' );
 	wp_enqueue_style( 'bootstrap');
 
@@ -463,6 +464,11 @@ function wpb_change_title_text( $title ){
      return $title;
 }
 
+// Make sure featured images are enabled
+add_theme_support( 'post-thumbnails' );
+
+// Add featured image sizes
+add_image_size( 'carousel-hotel', 820, 505, true ); // width, height, crop
 
 
 /**

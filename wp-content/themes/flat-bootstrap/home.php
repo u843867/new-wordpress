@@ -21,8 +21,13 @@ get_header(); ?>
 
 <div class="container">
 <div id="main-grid" class="row">
+    
+    
 
 	<section id="primary" class="content-area col-md-8">
+            
+            
+            
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : $count = 0; ?>

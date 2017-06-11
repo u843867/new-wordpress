@@ -158,14 +158,79 @@ blockquote footer {
     margin-top: -0.55em
 }
 
+.secondary-panel {
+    background-color: #f5f5f5;
+    font-size: 0.85em;
+    padding-left: 0.2e;
+    margin-left: -1.1em;
+    margin-right: -1.1em;
+}
+
+address {
+    display: inline-block;    
+}
+
+.phone {
+    display: inline-block;
+    float: left;
+    padding-top: 0.5em;
+    margin-bottom: 0;
+}
+
 address ul {
     margin-bottom: 0;
+}
+
+.booking_details {
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+td.hotel_details_table {
+    border-top: none;
+    
+}
+
+.label {
+    margin-right: 0.5em;
+    font-size: 90%;
 }
 
 tr.review-score {
     font-weight: 500;
     color: #16a085;
 }
+
+div#breadcrumbs {
+    padding-left: 2.2em;
+    max-height: 1.5em;
+    font-size: 0.8em;
+
+}
+
+p.prompt {
+    display: inline;
+    font-weight: 500;
+    padding-left: 0.5em;
+}
+
+p.pvalue {
+    display: inline;
+    font-weight: 600;
+}  
+
+#book {
+    font-size: x-small;
+}
+
+h2.widget-title {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+
+    
+
 /*--------------------------------------------------------------
 # Forms and Buttons
 --------------------------------------------------------------*/
@@ -355,6 +420,14 @@ div#content {
     .container {
         width: 1280px;
     }
+    ul#menu-short {
+    padding-left: 135px;
+}
+
+img.booked_image {
+    max-width: 12em;
+}
+
 }
 
 @media screen and  (min-width: 768px) {
@@ -367,7 +440,32 @@ div#content {
     padding-top: 0.3em;
 }
 
+img.booked_image {
+    max-width: 10em;
 }
+
+
+}
+
+@media (min-width: 200px) {
+	
+        
+.custom-logo {
+    max-width: 10em;
+    padding-top: 0.2em;
+    padding-right: 0.4em;
+    padding-left: 0.5em;
+}
+        
+img.booked_image {
+    max-width: 10em;
+}
+
+}
+
+        
+        
+
 
 /*--------------------------------------------------------------
 ## Header
@@ -398,6 +496,10 @@ div#content {
 .content-header h2, 
 .content-header h3 {
 	color: #fff;
+}
+
+.logo {
+    max-width: 75%;
 }
 
 /*--------------------------------------------------------------
@@ -527,6 +629,11 @@ address ul li {
     color: #bdc3c7; /*silver*/
 }
 
+.carousel-inner {
+
+    display: inline !important; 
+}
+
 /*--------------------------------------------------------------
 # Widgets and Plugins
 --------------------------------------------------------------*/
@@ -573,6 +680,3 @@ form.contact-form input[type='email']:focus,
 form.contact-form textarea:focus {
     color: #555;
 }
-
-
-

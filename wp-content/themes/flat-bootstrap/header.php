@@ -136,6 +136,18 @@
 		</div><!-- .navbar -->
 		</nav><!-- #site-navigation -->
 
+                
+            <div class="breadcrumbs container"
+                <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                    <p id="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
+            </div>
+                
+                
 	</header><!-- #masthead -->
 
 	<?php // Set up the content area (but don't put it in a container) ?>	

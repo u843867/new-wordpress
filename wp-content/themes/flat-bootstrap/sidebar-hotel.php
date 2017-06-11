@@ -42,6 +42,26 @@
                 $value = get_field('value_for_money')*10;  
                 
                 $average_review = ($cleanliness + $location_rating + $rooms + $beds + $overall_quality + $staff + $value) / 7; 
+            
+                $price_of_booking = get_field('Price of Booking');
+                
+                $originalArrivalDate = get_field('date_of_arrival');
+                $date_of_arrival = date("d M Y", strtotime($originalArrivalDate));
+
+                $originalDepartDate = get_field('date_of_departure');
+                $date_of_departure = date("d M Y", strtotime($originalDepartDate));
+                
+                $hotel_booked_at = get_field('hotel_booked_at');
+                
+                $package_or_hotelOnly = get_field('package_or_hotel-only');
+                    
+                $package_contents = get_field('package_contents');
+                $flight_origin = get_field('flight_origin');
+                $flight_destination = get_field('flight_destination');
+
+                       
+                
+                
             ?>
             
             
@@ -103,50 +123,65 @@
                             </div>
                         </div>
                         
-
-<!--                         Table 
-                        <table class="table">
-                            <tr class="review-score" >
-                                <td>Overall</td>
-
-                                <td><?php echo round($average_review,2); ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Cleanliness</td>
-
-                                <td><?php echo $cleanliness ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Location</td>
-                                <td><?php echo $location_rating ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Rooms</td>
-                                <td><?php echo $rooms ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Beds</td>
-                                <td><?php echo $beds ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Quality</td>
-                                <td><?php echo $overall_quality ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Staff</td>
-                                <td><?php echo $staff ?> /10</td>
-                            </tr>
-                            <tr>
-                                <td>Value</td>
-                                <td><?php echo $value ?> /10</td>
-                            </tr>
-
-                        </table>-->
                     </div>
 
 
                 </div>
             </aside>
+            
+            <aside class="widget widget_address rm">
+                
+                <div>
+                    <h2 class="widget-title">Top tips</h2>
+                    <h4><?php echo $posts[0] -> post_title . "- " . get_field("town/city") ?></h4>
+                    
+                </div> 
+                
+            </aside>
+            
+            
+            <aside class="widget widget_address rm" id="book">
+                
+                <div class="row">
+                        <div class="col-md-12 ">
+
+                              <h2 class="widget-title">hotel review details...</h2>
+
+
+                                        
+                                            <ul class="booking_details">
+                                                <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo("<p class='prompt'>Checked In:</p>" . "&nbsp" . "<p class='pvalue'> $date_of_arrival </p>" ); ?> </li>
+                                                <li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo("<p class='prompt'>Checked Out:</p>" . "&nbsp" . "<p class='pvalue'> $date_of_departure </p>" ); ?> </li>
+
+                                                <li><i class="fa fa-shopping-cart" aria-hidden="true"></i><?php echo("<p class='prompt'>Booked at:</p>" . "&nbsp" . "<p class='pvalue'>" . "<img class='booked_image' src='$hotel_booked_at' />" ); ?> </li>
+
+                                        <?php if ($price_of_booking) { ?>        
+                                                <li><i class="fa fa-money" aria-hidden="true"></i><?php echo("<p class='prompt'>Booking Cost:</p>" . "&nbsp" . "<p class='pvalue'> $price_of_booking </p>" ); ?> </li>
+                                        <?php } ?>
+                                        
+                                        <?php if ($package_or_hotelOnly) { ?>        
+                                                <li><i class="fa fa-square" aria-hidden="true"></i><?php echo( "<p class='prompt'>Booking Type:</p>" . "&nbsp" . "<p class='pvalue'> $package_or_hotelOnly </p>" ) ?>
+                                                <?php if ($package_or_hotelOnly == 'package') { 
+                                                echo('('.$package_contents[0].', '.$package_contents[1].')'); } ?>
+                                                </li>
+                                                <li><i class="fa fa-plane" aria-hidden="true"></i><?php echo("<p class='prompt'>Flight:</p>" . "&nbsp" . "<p class='pvalue'> $flight_origin  - $flight_destination  </p>" ); ?> </li>
+              
+                                            </ul>
+                                            <?php } ?> 
+                                    
+
+
+                        </div>
+
+                    </div>
+                
+               
+                
+                
+                
+            </aside>
+            
+            
             
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
